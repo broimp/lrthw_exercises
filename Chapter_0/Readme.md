@@ -48,11 +48,11 @@ The second entry was in Chinese, so I read Tim's. Though he went quite deep into
 it looked to me like the solution was to add a ".rubocop.yml" file to the Chapter_0
 directory running guard. So I did that.
 ```
-113796387_Chapter_0_master) Brooks Imperial
 Brookss-MBP:Chapter_0 $ cp ../.rubocop.yml .
 ```
 I went back into guard and typed "all" to cause it to re-run the cops: 
-```[1] guard(main)> all
+```
+   [1] guard(main)> all
    09:23:38 - INFO - Run all
    09:23:38 - INFO - Inspecting Ruby code style of all files
    Inspecting 0 files
@@ -60,14 +60,8 @@ I went back into guard and typed "all" to cause it to re-run the cops:
 ```
 And got a clean report.
 
-Adding a local .rubocop.yml and running guard locally is a temporary fix. Normally
-guard will trap errors in files in subdirectories to the directory it initiates in.
-This situation gets resolved once the new subdirectory for Chapter_0 gets merged.
-
-Seems like this problem will re-occur with each new chapter in the LRTHW series
-since prior to each merger, guard at the master directory level will never see the
-next Chapter directories.
-
-Rather than having to keep accomodating this problem, perhaps we could do the
-homeworks in this series in the main directory until they're all done, then
-sort them out into Chapter subdirectories later?
+Added a local .rubocop.yml and ran guard locally as a temporary fix. Subsequently
+removed it and the guard file (git rm <file>) after the intro got merged to master,
+making rubocop available to the rest of the chapter branches pulled from master. 
+Adjusted commit that had not yet been merged with a (git commit --amend) and a 
+(git push -f) on this topic branch.
