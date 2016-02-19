@@ -18,8 +18,8 @@
 > Provide a link in your Readme.md that links to the documentation for the 
 > following classes:
 
-* [Array](http://ruby-doc.org/core-2.2.0/Array.html)
-* [Hash](http://ruby-doc.org/core-2.2.0/Hash.html)
+* [Array](http://ruby-doc.org/core-2.2.4/Array.html)
+* [Hash](http://ruby-doc.org/core-2.2.4/Hash.html)
 
   "...a popular class of search methods commonly known as hashing or scatter
   storage techniques. The verb 'to hash' means to chop something up or to 
@@ -31,7 +31,7 @@
 
 > Find two other relative links and add those to the Readme.md as well.
 
-* [Ruby Object](http://ruby-doc.org/core-2.3.0/Object.html)
+* [Ruby Object](http://ruby-doc.org/core-2.2.4/Object.html)
 * [What's in the Object?](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-classes/lessons/108-displaying-objects)
 
 > Verify your Rubocop guard output had no errors, fix them if needed.  
@@ -60,7 +60,14 @@ I went back into guard and typed "all" to cause it to re-run the cops:
 ```
 And got a clean report.
 
-*So, it looks like I'll need to keep a local ".rubocop.yml" file in each
-directory where guard operates?* 
+Adding a local .rubocop.yml and running guard locally is a temporary fix. Normally
+guard will trap errors in files in subdirectories to the directory it initiates in.
+This situation gets resolved once the new subdirectory for Chapter_0 gets merged.
 
+Seems like this problem will re-occur with each new chapter in the LRTHW series
+since prior to each merger, guard at the master directory level will never see the
+next Chapter directories.
 
+Rather than having to keep accomodating this problem, perhaps we could do the
+homeworks in this series in the main directory until they're all done, then
+sort them out into Chapter subdirectories later?
