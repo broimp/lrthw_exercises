@@ -4,7 +4,9 @@ The undefined local variable or method error comes from trying to
 use a vairable that has not been instantiated yet. Instantiated means
 "set equal to something." It usually arises from a typo of a variable
 name.
-qwhich is essentially an integer. A 4.0 will type to Float, which
+
+Since ruby types variables automatically, a 4 will type to Fixnum,
+which is essentially an integer. A 4.0 will type to Float, which
 are more precise and include significant digits.
 
 The puts command will represent its own string interpretation of
