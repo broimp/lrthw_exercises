@@ -8,22 +8,28 @@ Study Drills:
 
 Go through this program and write a comment above each line explaining it.
 
-Find all the places where a string is put inside a string. There are four places.
+> Find all the places where a string is put inside a string. There are four places.
+> Are you sure there are only four places? How do you know? Maybe I like lying.
 
-Are you sure there are only four places? How do you know? Maybe I like lying.
-There's 6; I tested this. It's in the code. 
+```
+The 4 places are lines 7, 16, 23 and 24.
 
-But falsey boolean variables have surprising behavior. They don't evaluate
-to String, Fixnum or Float. They do instantiate as false, however, the
-inclusion of a falsey variable inside of another string makes 
-the whole subsequent string falsey. That's kind of unexpected.
+Line 33 does not qualify because the variable "hilarious" is not
+a string variable, even though by incorporating it into a string
+variable, the boolean value it contains turns into a string.
 
-Explain why adding the two strings w and e with + makes a longer string. 
+This happens for both true and false boolean values.
+```
+
+> Explain why adding the two strings w and e with + makes a longer string. 
+
 This is string concatenation.
 
-What happens when you change the strings to use ' (single-quote) 
-instead of " (double-quote)? Do they still work? Try to guess why.
+> What happens when you change the strings to use ' (single-quote) 
+> instead of " (double-quote)? Do they still work? Try to guess why.
 
+```
 Strings with single quotes are treated literally.
 Strings with double quotes have their contents evaluated. Always use
 double quotes for interpolated values.
+```
